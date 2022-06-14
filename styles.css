@@ -14,7 +14,7 @@ body {
 
 .navbar {
     z-index: 999;
-    background-color: #363538;
+    background-color: #272727;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -23,23 +23,25 @@ body {
     position: sticky;
     top: 0;
 }
+
+/* Positioning of the content of the nav */
 .navContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: absolute;
     margin: 0px auto;
     padding: 0 50px;
     height: 80px;
     z-index: 1;
     width: 100%;
-    max-width: 1500px;
+    max-width: 1600px;
 }
 
 #navbarLogo {
     display: flex;
-    font-size: 40px;
+    position: space-between;
     /* font-weight: 400; */
-    background-color: #f6f6f6;
-    background-image: linear-gradient(to right,#408697 0%, #f6f6f6 100%);
+    background-color: #e7e7e7;
+    background-image: linear-gradient(to right,#456a84 0%, #e7e7e7 25%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -49,7 +51,7 @@ body {
     text-decoration: none;
     font-size: 2rem;
     cursor: pointer;
-    width: 100%;
+    width: 70%;
 }
 
 .navbarSearch {
@@ -64,20 +66,30 @@ body {
 
 .searchInput {
     border: none;
-    border-bottom: #f6f6f6;
     background-color: transparent;
     width: 300px;
     height: 50px;
-    
+    color: #e7e7e7;
 }
 
 .searchInput::placeholder {
-    color: rgba(172, 227, 233, 0.612);
+    color: #8992a5;
 }
 
+.navCart {
+    /* margin: 10px; */
+    height: 50px;
+    width: 50px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #e7e7e7;
+  }
+
+/* Cart icon */
 .fa-cart-shopping, .fa-solid {
-    font-size: 4rem;
-    background-color: white;
+    font-size: 2rem;
 }
 
 .navbarDrop{
@@ -87,23 +99,26 @@ body {
     padding: ;
 }
 
+
 .drop .bar {
     width: 30px;
     height: 3px;
     margin: 5px auto;
     transition: all 0.3s ease-in-out;
-    background: #fff;
+    background: #e7e7e7;
     display: block;
     cursor: pointer;
 }
 
-#menu {
+/* Change position? */
+/* #menu {
     position: absolute;
     top: 20%;
     right: 5%;
     transform: translate(5%, 20%);
-}
+} */
 
+/* Menu bar toggles that form an x whn clicked */
 #menu.is-active .bar:nth-child(2) {
     opacity: 0;
 }
@@ -122,8 +137,9 @@ body {
     margin: 0;
     align-items: center;
     list-style: none;
-    width: 100%;
+    width: 12%;
     position: absolute;
+    right: 20;
     top: -1000px;
     opacity: 1;
     transition: all 0.5s ease;
@@ -138,7 +154,7 @@ body {
 .navbarLinks {
     color: #f6f6f6;
     text-align: center;
-    width: 125px;
+    width: 25px;
     width: 100%;
     text-decoration: none;
     height: 100%;
@@ -147,16 +163,130 @@ body {
 }
 
 .navbarLinks:hover {
-    color: #52d6f4;
+    color: #456a84;
     transition: all 0.3s ease;
 }
 
 .navbarMenu.active {
-    background: #363538;
+    background: #272727;
     top: 100%;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 99;
-    height: 60vh;
-    font-size: 1.6rem;
+    height: 50vh;
+    font-size: 1.3rem;
+    
 }
+
+@media screen and (max-width: 950px) {
+
+    .navContainer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbarSearch {
+        width: 50px;
+        align-items: center;
+        position: relative;
+    }
+    
+    .navbarMenu {
+        width: 100%;
+        right: 0;
+    }
+    
+}
+
+.landingContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1920px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+/* Backround default */
+.landingImg {
+    width: 100%;
+    z-index: -1;
+}
+
+.landingText {
+    z-index: 99;
+    position: absolute;
+}
+
+.landingHeader {
+    font-size: 80px;
+    color: #456a84;
+    text-shadow: 2px 2px  #e7e7e7;
+    margin: 15px;
+    transition: 1.5s ease-in-out;
+}
+
+.landingText h2 {
+    font-size: 40px;
+    color: #e7e7e7;
+}
+
+/* Sign-up button - having issues with hover */
+ .landingButton, .landingButton a {
+    font-size: 20px;
+    background: #456a84;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.35s;
+    outline: none;
+    text-decoration: none;
+    color: #e7e7e7;
+}
+
+.landingButton, .landingButton a:hover {
+    color: #456a84;
+    background-color: #e7e7e7;
+} 
+
+/* .button {
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+    width: 500px;
+    border: #e7e7e7; 
+    outline: none;
+    border-radius: 4px;
+    background: #456a84;;
+    transition: all 0.3s ease;
+    margin: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.landingButton { 
+    text-decoration: none;
+    color: #e7e7e7;
+    font-size: 20px;
+    z-index: 2;
+    position: relative;
+    border: #e7e7e7;
+    outline: none;
+    border-radius: 4px;
+    background: #456a84;;
+    transition: all 0.3s ease;
+} */
+
+/* 
+.landingButton:hover {
+    background: #e7e7e7;
+}
+
+.landingButton a:hover {
+    color: #456a84;
+} */
